@@ -1,0 +1,17 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    volumes:
+      - /Users/markus/Documents/GitHub/docker-experiments/filebrowser-test/path/to/root:/srv
+      - /Users/markus/Documents/GitHub/docker-experiments/filebrowser-test/path/database.db:/database.db
+      - /Users/markus/Documents/GitHub/docker-experiments/filebrowser-test/path/.filebrowser.json:/.filebrowser.json
+    ports:
+      - 8080:80
+    user: "${UID}:${GID}" #$$(id -u):$$(id -g)
+    #docker run \
+    # -v ./path/to/root:/srv \
+    # -v ./path/filebrowser.db:/database.db \
+    # -v ./path/filebrowser.json:/.filebrowser.json \
+    # -u $(id -u):$(id -g) \
+    # -p 8080:80 \
+    # filebrowser/filebrowser
