@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Exclude volumes from nginx proxy
+/*/data/
+/*/letsencrypt/
+
+# Exclude volumes from filebrowser
+/*/path/
